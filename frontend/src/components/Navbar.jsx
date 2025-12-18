@@ -225,7 +225,7 @@ const Navbar = () => {
 
             <Link
               to="/create"
-              className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full -mt-6 shadow-lg shadow-purple-500/30"
+              className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full shadow-lg shadow-purple-500/30"
             >
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
@@ -244,21 +244,7 @@ const Navbar = () => {
               <span className="text-[10px] font-medium">Alerts</span>
             </Link>
 
-            <Link
-              to={`/profile/${user.username}`}
-              className={`flex flex-col items-center gap-1 p-2 rounded-xl transition-all ${
-                location.pathname.includes('/profile') ? 'text-purple-400' : 'text-slate-400'
-              }`}
-            >
-              <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xs font-bold overflow-hidden">
-                {user.avatarUrl ? (
-                  <img src={user.avatarUrl} alt={user.username} className="w-full h-full object-cover" />
-                ) : (
-                  user.username?.charAt(0).toUpperCase()
-                )}
-              </div>
-              <span className="text-[10px] font-medium">Profile</span>
-            </Link>
+            {/* Profile shortcut removed per mobile UX request */}
           </div>
         </nav>
       )}
